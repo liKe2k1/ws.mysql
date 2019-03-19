@@ -5,7 +5,7 @@ SHELL ["powershell.exe", "-Command", "$ErrorActionPreference = 'Stop'; $Progress
 ENV mysql_version="8.0.15"
 ENV mysql_root_password="root"
 
-ADD "/mysql-"$mysql_version"-winx64.zip" mysql.zip
+ADD "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.15-winx64.zip" mysql.zip
 
 RUN Expand-Archive -Path c:\mysql.zip -DestinationPath C:\ ; \
 	Rename-Item -Path "C:\mysql-"$env:mysql_version"-winx64" -NewName C:\MySQL ; \
