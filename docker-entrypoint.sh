@@ -7,8 +7,8 @@ If (!(Test-Path -Path "C:\\MySQL\\data")) {
 
 	New-Item -Path C:\MySQL\data -ItemType directory
 	
-	$InitArgumentList = \"–init-file=C:\\MySQL\\mysql-init.txt --initialize --console --explicit_defaults_for_timestamp\"
-	$InstallArgumentList = \"--install\"
+	$InitArgumentList = "–init-file=C:\\MySQL\\mysql-init.txt --initialize --console --explicit_defaults_for_timestamp"
+	$InstallArgumentList = "--install"
 	
 	Start-Process -FilePath C:\MySQL\bin\mysqld.exe -ArgumentList $InitArgumentList  -Wait -NoNewWindow
 	Start-Process -FilePath C:\MySQL\bin\mysqld.exe -ArgumentList $InstallArgumentList  -Wait -NoNewWindow
